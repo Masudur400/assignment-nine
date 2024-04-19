@@ -25,7 +25,7 @@ const Details = () => {
     }
 
     return (
-        <div className="md:flex gap-4 md:px-6 md:mt-5 min-h-screen">
+        <div className="md:flex gap-4 md:px-6  md:mt-5 min-h-screen">
             <div className="md:w-2/5">
                 <img className="w-full h-96" src={image} alt="" />
             </div>

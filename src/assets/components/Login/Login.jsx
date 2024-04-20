@@ -8,7 +8,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
 
-    const { logIn, googleLogin } = useContext(AuthContext)
+    const { logIn, googleLogin, githubLogin } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation();
 
@@ -33,6 +33,16 @@ const Login = () => {
 
     const handleGoogleLogin = () =>{
         googleLogin()
+        .then(result =>{
+            console.log(result)
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
+
+    const handleGithubLogin = () =>{
+        githubLogin()
         .then(result =>{
             console.log(result)
         })
@@ -66,7 +76,7 @@ const Login = () => {
                     <p>Google</p>
                     </div>
                      <div>
-                     <button className="text-red-500 text-2xl bg-gray-200 p-3 rounded-2xl"> <FaGithub></FaGithub></button>
+                     <button onClick={handleGithubLogin} className="text-red-500 text-2xl bg-gray-200 p-3 rounded-2xl"> <FaGithub></FaGithub></button>
                     <p>Github</p>
                      </div>
                 </div>

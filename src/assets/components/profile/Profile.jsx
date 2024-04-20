@@ -18,9 +18,9 @@ const Profile = () => {
                 <img className="bg-red-50 w-52 h-52 rounded-full" src={user?.photoURL} alt="" />
                 </div>
 
-                <h2 className="text-2xl my-5 font-bold text-center">Name : {user?.displayName}</h2>
+                <h2 className="text-2xl my-5 font-bold text-center">Name : {user?.displayName || 'Gest'}</h2>
 
-                <p className="text-center mb-5">Email: {user?.email}</p>
+                <p className="text-center mb-5">Email: {user?.email || "User"}</p>
 
                <div className="flex justify-center">
                <Link to='/updateProfile'><button className="px-4 py-2 rounded-md bg-red-500 text-white font-bold">Update Profile</button></Link>

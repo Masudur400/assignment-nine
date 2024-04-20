@@ -14,6 +14,8 @@ import Login from './assets/components/Login/Login';
 import Register from './assets/components/Register/Register';
 import Select from './assets/components/SelectList/Select';
 import AuthProvider from './assets/components/Providers/AuthProvider';
+import PrivetRout from './assets/components/PrivetRout/PrivetRout';
+import Profile from './assets/components/profile/Profile';
  
 
 const router = createBrowserRouter([
@@ -29,7 +31,9 @@ const router = createBrowserRouter([
       },
       {
         path:"/card/:id",
-        element:<Details></Details>,
+        element:<PrivetRout>
+          <Details></Details>
+        </PrivetRout>,
         loader:  ()=>  fetch('../fakedata.json'),
       },
       {
@@ -42,8 +46,16 @@ const router = createBrowserRouter([
       },
       {
         path:'/selectList',
-        element:<Select></Select>,
+        element:<PrivetRout>
+          <Select></Select>
+        </PrivetRout>,
         loader:  ()=>  fetch('../fakedata.json'),
+      },
+      {
+        path:'/profile',
+        element:<PrivetRout>
+          <Profile></Profile>
+        </PrivetRout>
       }
 
        

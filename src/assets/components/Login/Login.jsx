@@ -1,11 +1,14 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import 'animate.css';
 
 
 const Login = () => {
 
     const {logIn} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation();
 
     const handleLogin = e => {
         e.preventDefault()
@@ -17,18 +20,21 @@ const Login = () => {
         logIn(email, password)
         .then(result =>{
             console.log(result.user)
+
+            navigate(location?.state? location.state : '/')
         })
         .catch(error =>{
             console.error(error)
         }) 
+
          
 
     }
 
     return (
         <div className="min-h-screen">
-            <div className="w-4/5 lg:w-1/3 md:w-2/3 mx-auto bg-gray-100 shadow-xl p-5 rounded-lg my-20">
-                <h2 className="text-2xl font-bold text-center text-red-500  my-3">LogIn Your Account</h2>
+            <div data-aos="zoom-in-down" className="w-4/5 lg:w-1/3 md:w-2/3 mx-auto bg-gray-100 shadow-xl p-5 rounded-lg my-20">
+                <h2  className="text-2xl font-bold text-center text-red-500 animate__animated animate__rubberBand  my-3">LogIn Your Account</h2>
                 <form onSubmit={handleLogin}>
 
 

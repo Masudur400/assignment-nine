@@ -8,7 +8,7 @@ const SingleSelectCard = ({card}) => {
     const {estate_title, image, segment_name, info, price, area, location, status, facilities } = card;
 
     return (
-        <div className="md:flex gap-4 md:px-6 md:mt-9 ">
+        <div data-aos="fade-left" className="md:flex gap-4 md:px-6 md:mt-9 ">
         <div className="md:w-2/5 flex justify-center items-center">
             <img className="w-full h-96 rounded-lg" src={image} alt="" />
         </div>

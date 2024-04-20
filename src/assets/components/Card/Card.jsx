@@ -8,7 +8,7 @@ const Card = ({ card }) => {
     const { estate_title, image, price, description, area ,status,id} = card;
 
     return (
-        <div className="flex flex-col">
+        <div data-aos="zoom-in" className="flex flex-col">
             <img className="w-96 h-60" src={image} alt="" />
             <div className="flex flex-col gap-2 mt-5 flex-grow">
                 <h3 className="text-2xl text-start font-bold text-red-500">{price}</h3>

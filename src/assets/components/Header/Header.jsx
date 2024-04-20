@@ -1,41 +1,59 @@
  
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'; 
+
+
 const Header = () => {
     return (
-        <div>
-            <div>
-                <div className="carousel w-full rounded-lg">
-                    <div id="slide1" className="carousel-item relative w-full">
-                        <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide4" className=" text-3xl  text-red-500 ">❮</a>
-                            <a href="#slide2" className=" text-3xl text-red-500">❯</a> 
-                        </div>
-                    </div>
-                    <div id="slide2" className="carousel-item relative w-full">
-                        <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide1" className="text-3xl text-red-500">❮</a>
-                            <a href="#slide3" className="text-3xl text-red-500">❯</a>
-                        </div>
-                    </div>
-                    <div id="slide3" className="carousel-item relative w-full">
-                        <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide2" className="text-3xl text-red-500">❮</a>
-                            <a href="#slide4" className="text-3xl text-red-500">❯</a>
-                        </div>
-                    </div>
-                    <div id="slide4" className="carousel-item relative w-full">
-                        <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide3" className="text-3xl text-red-500">❮</a>
-                            <a href="#slide1" className="text-3xl text-red-500">❯</a>
-                        </div>
-                    </div>
+        <div className=" lg:container lg:mx-auto sm:container sm:mx-auto">
+          <div className="font-bold mr-12">
+            
+          </div>
+          <>
+            <Swiper
+              spaceBetween={30}
+              centeredSlides={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              className="mySwiper"
+            >
+              <SwiperSlide><div className='slide slide1'>
+                <div className='m-auto'>
+                  <h1 className='lg:text-7xl text-4xl md:text-5xl text-center text-red-600 m-auto font-bold  '>Realistic Towns</h1>
+                  <p className='lg:text-xl text-center m-auto w-2/3 text-white mt-5  '>Real property that includes land and anything permanently attached to it or built on it, whether natural or man-made</p> 
+                   
                 </div>
-            </div>
+              </div></SwiperSlide>
+              <SwiperSlide><div className='slide slide2'>
+                <div className='m-auto'>
+                  <h1 className='lg:text-7xl text-4xl md:text-5xl text-center text-red-600 m-auto font-bold'>Realistic Towns</h1>
+                  <p className='lg:text-xl text-center m-auto w-2/3 text-white mt-5  '>Real property that includes land and anything permanently attached to it or built on it, whether natural or man-made</p>
+                  
+                </div>
+              </div></SwiperSlide>
+              <SwiperSlide> <div className='slide slide3'>
+                <div className='m-auto'>
+                  <h1 className='lg:text-7xl text-4xl md:text-5xl text-center text-red-600 m-auto font-bold'>Realistic Towns</h1>
+                  <p className='lg:text-xl text-center m-auto w-2/3 text-white mt-5  '>Real property that includes land and anything permanently attached to it or built on it, whether natural or man-made</p>
+                  
+                </div>
+              </div></SwiperSlide>
+              
+            </Swiper>
+          </>
+    
         </div>
-    );
+      );
 };
 
 export default Header;

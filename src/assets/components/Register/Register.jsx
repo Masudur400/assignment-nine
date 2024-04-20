@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import 'animate.css';
 
 
 
@@ -28,9 +29,9 @@ const Register = () => {
     }
 
     return (
-        <div className="min-h-screen">
-            <div className="w-4/5 lg:w-1/3 md:w-2/3 mx-auto bg-gray-100 shadow-xl p-5 rounded-lg my-20">
-                <h2 className="text-2xl font-bold text-center text-red-500  my-3">Please Register </h2>
+        <div  className="min-h-screen">
+            <div data-aos="zoom-in-down" className="w-4/5 lg:w-1/3 md:w-2/3 mx-auto bg-gray-100 shadow-xl p-5 rounded-lg my-20">
+                <h2 className="text-2xl font-bold text-center text-red-500 animate__animated animate__rubberBand  my-3">Please Register </h2>
 
                 <form onSubmit={handleRegister}>
 

@@ -15,10 +15,9 @@ const Register = () => {
         const name = form.get('name')
         const email = form.get('email')
         const photo = form.get('photo')
-        const password = form.get('password')
-        console.log(name, photo, email, password)
+        const password = form.get('password') 
 
-        createUser(email, password)
+        createUser(email, password,name, photo)
         .then(result =>{
             console.log(result.user)
         })

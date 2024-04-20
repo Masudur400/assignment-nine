@@ -16,9 +16,9 @@ const googleProvider = new GoogleAuthProvider()
 const githubProvider = new GithubAuthProvider()
 
 
-const createUser = (email, password) =>{ 
+const createUser = (email, password,name,photo) =>{ 
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth,email, password,name, photo);
 } 
 
 const logIn = (email, password) =>{

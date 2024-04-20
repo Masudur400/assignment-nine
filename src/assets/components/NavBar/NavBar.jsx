@@ -15,8 +15,7 @@ const NavBar = () => {
     }
 
     const links = <>
-        <li> <NavLink to="/">Home</NavLink></li>
-        <li> <NavLink to="updateProfile">Update Profile</NavLink></li>
+        <li> <NavLink to="/">Home</NavLink></li> 
         <li> <NavLink to="selectList">Select list</NavLink></li>
         <li> <NavLink to="profile">ProFile</NavLink></li>
         <li> <NavLink to="Register">Register</NavLink></li>
@@ -47,7 +46,7 @@ const NavBar = () => {
 
                     {
                         user ? <div className="flex max-sm:w-full max-sm:gap-32 gap-3  ">
-                            <img className="w-12 h-12 rounded-full" alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <img className="w-12 h-12 rounded-full" alt="" src={user?.photoURL} />
 
                             <button onClick={handleSignOut} className="btn font-bold text-red-500">Log Out</button> </div>
                             : <Link to='/login' className="btn font-bold text-red-500">Login</Link>

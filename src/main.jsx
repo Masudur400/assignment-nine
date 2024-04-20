@@ -16,6 +16,7 @@ import Select from './assets/components/SelectList/Select';
 import AuthProvider from './assets/components/Providers/AuthProvider';
 import PrivetRout from './assets/components/PrivetRout/PrivetRout';
 import Profile from './assets/components/profile/Profile';
+import UpdateProfile from './assets/components/UpdateProfile/UpdateProfile';
  
 
 const router = createBrowserRouter([
@@ -55,6 +56,12 @@ const router = createBrowserRouter([
         path:'/profile',
         element:<PrivetRout>
           <Profile></Profile>
+        </PrivetRout>
+      },
+      {
+        path:'/updateProfile',
+        element:<PrivetRout>
+          <UpdateProfile></UpdateProfile>
         </PrivetRout>
       }
 

@@ -34,7 +34,8 @@ const NavBar = () => {
                      
                         <img className="w-12 h-12 rounded-full"  alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                      
-                    <a className="btn font-bold">LogOut</a>
+                     <Link to='/login' className="btn font-bold">Login</Link>
+                     
                 </div>
             </div>
         </div>

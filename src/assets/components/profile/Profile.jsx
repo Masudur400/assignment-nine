@@ -15,7 +15,7 @@ const Profile = () => {
                 user && <div data-aos="zoom-in-down" className="w-4/5 lg:w-1/3 md:w-2/3 mx-auto bg-gray-100 shadow-xl p-5 rounded-lg my-20">
 
                 <div className="flex justify-center">
-                <img className="bg-red-50 w-52 h-52 rounded-full" src={user?.photoURL} alt="" />
+                <img className="bg-red-100 w-52 h-52 rounded-full" src={user?.photoURL} alt="" />
                 </div>
 
                 <h2 className="text-2xl my-5 font-bold text-center">Name : {user?.displayName || 'Gest'}</h2>

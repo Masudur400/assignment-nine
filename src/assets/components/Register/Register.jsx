@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import 'animate.css';
 import { updateProfile } from "firebase/auth";

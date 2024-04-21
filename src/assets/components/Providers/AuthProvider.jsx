@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react"; 
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../Firebase/Firebase.config";  
+import UpdateProfile from "../UpdateProfile/UpdateProfile";
 
 
 
@@ -36,6 +37,15 @@ const githubLogin = () =>{
     return signInWithPopup(auth, githubProvider);
 }
 
+const updateProfile = (name, photo) =>{
+    setLoading(true);
+    return UpdateProfile(user,{
+        displayName : name,
+        photoURL : photo
+    })
+
+}
+
 
 
 const logOut = () =>{
@@ -62,6 +72,7 @@ useEffect(()=>{
         loading,
         googleLogin,
         githubLogin,
+        updateProfile,
         
     }
 

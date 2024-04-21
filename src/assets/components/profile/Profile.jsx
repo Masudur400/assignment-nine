@@ -6,7 +6,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 const Profile = () => {
 
     const {user} = useContext(AuthContext)
-    console.log(user)
+     
 
     return (
         <div className="min-h-screen">

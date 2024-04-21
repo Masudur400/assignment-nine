@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import 'animate.css';
@@ -6,10 +6,16 @@ import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
+
 
 const Login = () => {
 
     const { logIn, googleLogin, githubLogin } = useContext(AuthContext)
+
+    const [showPassword, setShowPassword] = useState(false);
+
     const navigate = useNavigate()
     const location = useLocation();
 
@@ -66,7 +72,12 @@ const Login = () => {
                     <input className="border-2 rounded-md w-full px-4 py-2 mb-2" type="email" name="email" placeholder="Email" id="email" required />
 
                     <p>Password</p>
-                    <input className="border-2 rounded-md w-full px-4 py-2 mb-2" type="password" name="password" placeholder="Password" id="password" required />
+                    <div className="relative">
+                    <input className="border-2 rounded-md w-full px-4 py-2 mb-2" type={showPassword? "text" : "password"} name="password" placeholder="Password" id="password" required />
+                     <span className="absolute top-1/4 right-3" onClick={()=>setShowPassword(!showPassword)}>
+                        { showPassword? <FaRegEyeSlash></FaRegEyeSlash>: <FaRegEye></FaRegEye>}
+                     </span>
+                    </div>
 
                     <input className=" rounded-md hover:bg-red-400 bg-red-500 w-full px-4 py-2 text-center font-bold text-lg text-white my-3" type="submit" value="Login" />
                 </form>

@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div className='mt-5'>
             <Helmet>
-                <title>Home</title>
+                <title>Residential || Home</title>
             </Helmet>
             <div>
             <Header></Header>

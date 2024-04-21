@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getSelectCard } from "../utility/SavedCard";
-import SingleSelectCard from "../SingleSelectCard/SingleSelectCard";
-import { Helmet } from "react-helmet";
+import SingleSelectCard from "../SingleSelectCard/SingleSelectCard"; 
 
  
  
@@ -22,10 +21,7 @@ const Select = () => {
      },[  selectedCards])  
 
     return (
-        <div>
-            <Helmet>
-                <title>Select</title>
-            </Helmet>
+        <div> 
              {
                 selectCard.map(card => <SingleSelectCard key={card.id} card ={card}></SingleSelectCard>)
              }

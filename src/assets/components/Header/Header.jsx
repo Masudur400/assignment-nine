@@ -29,21 +29,21 @@ const Header = () => {
             >
               <SwiperSlide><div className='slide slide1'>
                 <div className='m-auto'>
-                  <h1 className='lg:text-7xl text-4xl md:text-5xl text-center text-red-600 m-auto font-bold  '>Realistic Towns</h1>
+                  <h1 className='lg:text-7xl text-4xl md:text-5xl text-center text-red-600 m-auto font-bold  '>Residential Towns</h1>
                   <p className='bg-black bg-opacity-30 rounded-full p-2 lg:text-xl text-center m-auto w-2/3 text-white mt-5  '>Real property that includes land and anything permanently attached to it or built on it, whether natural or man-made</p> 
                    
                 </div>
               </div></SwiperSlide>
               <SwiperSlide><div className='slide slide2'>
                 <div className='m-auto'>
-                  <h1 className='lg:text-7xl text-4xl md:text-5xl text-center text-red-600 m-auto font-bold'>Realistic Towns</h1>
+                  <h1 className='lg:text-7xl text-4xl md:text-5xl text-center text-red-600 m-auto font-bold'>Residential Towns</h1>
                   <p className='bg-black bg-opacity-30 rounded-full p-2 lg:text-xl text-center m-auto w-2/3 text-white mt-5  '>Real property that includes land and anything permanently attached to it or built on it, whether natural or man-made</p>
                   
                 </div>
               </div></SwiperSlide>
               <SwiperSlide> <div className='slide slide3'>
                 <div className='m-auto'>
-                  <h1 className='lg:text-7xl text-4xl md:text-5xl text-center text-red-600 m-auto font-bold'>Realistic Towns</h1>
+                  <h1 className='lg:text-7xl text-4xl md:text-5xl text-center text-red-600 m-auto font-bold'>Residential Towns</h1>
                   <p className='bg-black bg-opacity-30 rounded-full p-2 lg:text-xl text-center m-auto w-2/3 text-white mt-5  '>Real property that includes land and anything permanently attached to it or built on it, whether natural or man-made</p>
                   
                 </div>

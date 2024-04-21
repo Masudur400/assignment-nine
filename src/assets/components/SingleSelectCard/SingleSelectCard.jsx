@@ -11,7 +11,7 @@ const SingleSelectCard = ({card}) => {
     return (
         <div data-aos="fade-left" className="md:flex gap-4 md:px-6 md:mt-9 ">
             <Helmet>
-                <title>SingleSelectCard</title>
+                <title> Selected Cards</title>
             </Helmet>
         <div className="md:w-2/5 flex justify-center items-center">
             <img className="w-full h-96 rounded-lg" src={image} alt="" />

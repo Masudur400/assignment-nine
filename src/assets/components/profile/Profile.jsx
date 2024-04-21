@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 const Profile = () => {
 
     const {user} = useContext(AuthContext)
+    console.log(user,'user from profile')
      
 
     return (

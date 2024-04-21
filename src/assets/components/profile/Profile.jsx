@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
  
 const Profile = () => {
@@ -10,6 +11,9 @@ const Profile = () => {
 
     return (
         <div className="min-h-screen">
+            <Helmet>
+                <title>Profile</title>
+            </Helmet>
 
             {
                 user && <div data-aos="zoom-in-down" className="w-4/5 lg:w-1/3 md:w-2/3 mx-auto bg-gray-100 shadow-xl p-5 rounded-lg my-20">

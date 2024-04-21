@@ -4,6 +4,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import 'animate.css';
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 
 const Login = () => {
@@ -53,6 +54,9 @@ const Login = () => {
 
     return (
         <div className="min-h-screen">
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <div data-aos="zoom-in-down" className="w-4/5 lg:w-1/3 md:w-2/3 mx-auto bg-gray-100 shadow-xl p-5 rounded-lg my-20">
                 <h2 className="text-2xl font-bold text-center text-red-500 animate__animated animate__rubberBand  my-3">LogIn Your Account</h2>
                 <form onSubmit={handleLogin}>

@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Header from "../Header/Header";
 import Card from "../Card/Card";
+import { Helmet } from "react-helmet";
 
  
 const Home = () => {
@@ -8,6 +9,9 @@ const Home = () => {
 
     return (
         <div className='mt-5'>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <div>
             <Header></Header>
             </div>

@@ -1,20 +1,25 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import {  useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 
 
 const UpdateProfile = () => {
-    const { updateProfile, user } = useContext(AuthContext)
+    const { updateUserProfile  } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    
 
     const handleUpdate = e => {
         e.preventDefault()
         const name = e.target.name.value
         const photo = e.target.photo.value
 
-        updateProfile(name, photo)
-            .then(result => {
-                console.log(result.use)
+        updateUserProfile(name, photo)
+            .then( ()=>{ 
+                 navigate(location?.state? location.state :'/profile')
             })
             .catch(error => {
                 console.log(error)
@@ -25,6 +30,9 @@ const UpdateProfile = () => {
 
     return (
         <div className="min-h-screen">
+            <Helmet>
+                <title>UpdateProfile</title>
+            </Helmet>
             <div data-aos="zoom-in-down" className="w-4/5 lg:w-1/3 md:w-2/3 mx-auto bg-gray-100 shadow-xl p-5 rounded-lg my-20">
                 <h2 className="text-2xl font-bold text-center text-red-500 animate__animated animate__rubberBand  my-3">Update Profile</h2>
 

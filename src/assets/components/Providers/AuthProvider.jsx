@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react"; 
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../Firebase/Firebase.config";  
 import UpdateProfile from "../UpdateProfile/UpdateProfile";
 
@@ -37,12 +37,12 @@ const githubLogin = () =>{
     return signInWithPopup(auth, githubProvider);
 }
 
-const updateProfile = (name, photo) =>{
+const updateUserProfile = (name, photo) =>{
     setLoading(true);
-    return UpdateProfile(user,{
+    return updateProfile (user,{
         displayName : name,
         photoURL : photo
-    })
+    },setLoading(false))
 
 }
 
@@ -72,7 +72,7 @@ useEffect(()=>{
         loading,
         googleLogin,
         githubLogin,
-        updateProfile,
+        updateUserProfile,
         
     }
 

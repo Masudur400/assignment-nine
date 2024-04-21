@@ -1,13 +1,16 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import 'animate.css';
+import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet";
 
 
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate(); 
 
     const handleRegister = e => {
         e.preventDefault();
@@ -19,7 +22,15 @@ const Register = () => {
 
         createUser(email, password,name, photo)
         .then(result =>{
-            console.log(result.user)
+             updateProfile(result.user,{
+                displayName: name,
+                photoURL:photo
+             })
+             .then()
+             .catch(error =>{
+                console.log(error)
+             })
+             navigate('/')
         })
         .catch(error =>{
             console.error(error)
@@ -29,6 +40,9 @@ const Register = () => {
 
     return (
         <div  className="min-h-screen">
+            <Helmet>
+                <title>Register</title>
+            </Helmet>
             <div data-aos="zoom-in-down" className="w-4/5 lg:w-1/3 md:w-2/3 mx-auto bg-gray-100 shadow-xl p-5 rounded-lg my-20">
                 <h2 className="text-2xl font-bold text-center text-red-500 animate__animated animate__rubberBand  my-3">Please Register </h2>
 

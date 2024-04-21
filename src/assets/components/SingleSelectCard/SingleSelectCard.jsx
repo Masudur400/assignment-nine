@@ -2,6 +2,7 @@
 import { MdLocationPin } from "react-icons/md"; 
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import { Helmet } from "react-helmet";
 
 const SingleSelectCard = ({card}) => {
 
@@ -9,6 +10,9 @@ const SingleSelectCard = ({card}) => {
 
     return (
         <div data-aos="fade-left" className="md:flex gap-4 md:px-6 md:mt-9 ">
+            <Helmet>
+                <title>SingleSelectCard</title>
+            </Helmet>
         <div className="md:w-2/5 flex justify-center items-center">
             <img className="w-full h-96 rounded-lg" src={image} alt="" />
         </div>

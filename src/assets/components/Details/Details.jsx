@@ -4,6 +4,7 @@ import { MdLocationPin } from "react-icons/md";
 import { saveSelectCard } from "../utility/SavedCard";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 const Details = () => {
     const [cardDetails, setCardDetails] = useState([]);
@@ -26,6 +27,9 @@ const Details = () => {
 
     return (
         <div className="md:flex gap-4 md:px-6  md:mt-5 min-h-screen">
+            <Helmet>
+                <title>Details</title>
+            </Helmet>
             <div className="md:w-2/5">
                 <img className="w-full h-96" src={image} alt="" />
             </div>

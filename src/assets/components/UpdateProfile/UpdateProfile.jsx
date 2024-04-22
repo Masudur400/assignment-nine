@@ -1,25 +1,25 @@
-import { useContext } from "react";
+import { useContext  } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import {  useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 
 
 
 const UpdateProfile = () => {
-    const { updateUserProfile  } = useContext(AuthContext);
-    const navigate = useNavigate();
-    const location = useLocation();
+    const { updateUserProfile  } = useContext(AuthContext); 
+    const navigate = useNavigate();  
     
 
     const handleUpdate = e => {
         e.preventDefault()
         const name = e.target.name.value
         const photo = e.target.photo.value
+        
 
         updateUserProfile(name, photo)
-            .then( ()=>{ 
-                 navigate(location?.state? location.state :'/profile')
+            .then( ()=>{  
+                 navigate('/profile')
             })
             .catch(error => {
                 console.log(error)

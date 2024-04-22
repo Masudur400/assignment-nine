@@ -12,6 +12,7 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 const Register = () => {
 
      const [showPassword, setShowPassword] = useState(false);
+     const[emailError, setEmailError] = useState('');
     const [userSuccess, setUserSuccess] = useState('');
     const [passwordError, setPasswordError] = useState('');
 
@@ -29,6 +30,8 @@ const Register = () => {
 
         setUserSuccess('');
         setPasswordError('');
+        setEmailError('');
+
 
         if (password.length < 6) {
             setPasswordError('Password should be at least 6 characters or longer')
@@ -54,7 +57,8 @@ const Register = () => {
                 navigate('/')
             })
             .catch(error => {
-                console.error(error)
+                console.error(error.message);
+                setEmailError('email-already-in-used');
                  
             })
 
@@ -82,7 +86,9 @@ const Register = () => {
 
                     <p>Email</p>
                     <input className="border-2 rounded-md w-full px-4 py-2 mb-2" type="email" name="email" placeholder="Email" id="email" required />
-                     
+                     {
+                        emailError && <p className="  text-red-500">{emailError}</p>
+                     }
 
                     <p>Password</p>
                     <div className="relative">

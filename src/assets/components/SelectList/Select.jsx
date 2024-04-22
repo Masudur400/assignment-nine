@@ -21,7 +21,7 @@ const Select = () => {
      },[  selectedCards])  
 
     return (
-        <div> 
+        <div className="min-h-screen"> 
              {
                 selectCard.map(card => <SingleSelectCard key={card.id} card ={card}></SingleSelectCard>)
              }

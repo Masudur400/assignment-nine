@@ -42,6 +42,7 @@ const Login = () => {
         googleLogin()
         .then(result =>{
             console.log(result)
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error =>{
             console.log(error)
@@ -52,6 +53,7 @@ const Login = () => {
         githubLogin()
         .then(result =>{
             console.log(result)
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error =>{
             console.log(error)

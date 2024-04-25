@@ -6,6 +6,7 @@ import { updateProfile } from "firebase/auth";
 import { Helmet } from "react-helmet";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import Swal from "sweetalert2";
 
 
 
@@ -45,6 +46,14 @@ const Register = () => {
 
         createUser(email, password, name, photo)
             .then(result => {
+                console.log(result.user)
+                if(result.user){
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Register successfully!",
+                        icon: "success"
+                      });
+                }
                 updateProfile(result.user, {
                     displayName: name,
                     photoURL: photo

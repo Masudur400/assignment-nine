@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -29,6 +30,13 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
                 console.log(result.user)
+                if(result.user){
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Login successfully!",
+                        icon: "success"
+                      });
+                }
 
                 navigate(location?.state ? location.state : '/')
             })

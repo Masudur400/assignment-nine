@@ -26,6 +26,7 @@ const Profile = () => {
                 <h2 className="text-2xl my-5 font-bold text-center">Name : {user?.displayName || 'Gest'}</h2>
 
                 <p className="text-center mb-5">Email: {user?.email || "User"}</p>
+                <p className="text-center mb-5">Creation Time: {user?.metadata?.creationTime }</p>
 
                <div className="flex justify-center">
                <Link to='/updateProfile'><button className="px-4 py-2 rounded-md bg-red-500 text-white font-bold">Update Profile</button></Link>

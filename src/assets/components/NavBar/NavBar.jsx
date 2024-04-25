@@ -46,10 +46,12 @@ const NavBar = () => {
                     {
                         user ? <div className="flex max-sm:w-full max-sm:gap-32 gap-3  ">
 
-                            
-                             
-                            <img className="w-12 h-12 rounded-full bg-white" alt="" src={user?.photoURL}
-                             />
+                            <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                <img className="w-12 h-12 rounded-full bg-white" alt="" src={user?.photoURL}
+                                />
+                            </div>
+
+
 
                             <button onClick={handleSignOut} className="btn font-bold text-red-500">Log Out</button> </div>
                             : <div className="flex gap-4">

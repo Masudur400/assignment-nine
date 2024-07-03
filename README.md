@@ -25,3 +25,6 @@ Our website is about a real state town so Benefits of using our website.
 - Animate.css : https://animate.style/
 
 - Sweet Alert : https://sweetalert2.github.io/#download
+
+# residential town
+-live link : https://assignment-nine-adfb5.web.app/
